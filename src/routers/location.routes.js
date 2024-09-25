@@ -9,10 +9,18 @@ import {
 
 const router = express.Router();
 
-router.post('/location', createLocation);
-router.get('/locations', getLocations);
-router.get('/location/:id', getLocationById);
-router.put('/location/:id', updateLocation);
-router.delete('/location/:id', deleteLocation);
+router.get('/', getLocations);
+
+// Criar uma nova localização
+router.post('/', createLocation);
+
+// Obter uma localização pelo ID
+router.get('/:id', getLocationById);
+
+// Atualizar uma localização
+router.put('/:id', updateLocation);
+
+// Deletar uma localização
+router.delete('/:id', deleteLocation);
 
 export default router;
